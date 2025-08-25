@@ -12,4 +12,63 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.pokemon-display {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+#pokemon-sprite {
+    width: 300px;
+    height: 300px;
+    image-rendering: pixelated;
+}
+
+.pokemon-info {
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+}
+
+#pokemon-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+#pokemon-id {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.controls {
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+button {
+    background: rgba(4, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
 }
