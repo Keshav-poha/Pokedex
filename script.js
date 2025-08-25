@@ -27,4 +27,4 @@ document.getElementById('next-btn').addEventListener('click', () => {
     }
 });
 
-loadPokemon(currentPokemonId);
+loadPokemon(currentPokemonId)
