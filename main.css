@@ -1,4 +1,5 @@
 * {
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,47 +18,187 @@ body {
 
 .pokemon-display {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 10;
     opacity: 0;
-    animation: fadeIn ease-in-out 4s forwards;
+    animation: fadeIn 3s forwards;
+    padding: 20px;
+    width: 420px;
+    max-height: 50vh;
+    overflow: hidden;
+}
+
+.pokemon-display::-webkit-scrollbar {
+    display: none;
 }
 
 #pokemon-sprite {
-    width: 300px;
-    height: 300px;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 200px;
+    height: 200px;
     image-rendering: pixelated;
 }
 
 .pokemon-info {
-    color: rgb(0, 0, 0);
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 #pokemon-name {
-    font-size: 18px;
-    margin-bottom: 5px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    font-size: 24px;
+    margin-right: 50px;
     text-transform: capitalize;
+    color: rgb(0, 0, 0);
 }
 
 #pokemon-id {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    margin-right: 50px;
+    font-size: 18px;
+    color: #000000;
+}
+
+#pokemon-types {
+    position: absolute;
+    top: 90px;
+    right: 0;
+    gap: 10px;
+    margin-right: 50px;
+}
+
+.type-badge {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.type-normal { background: #A8A878; }
+.type-fire { background: #F08030; }
+.type-water { background: #6890F0; }
+.type-electric { background: #F8D030; }
+.type-grass { background: #78C850; }
+.type-ice { background: #98D8D8; }
+.type-fighting { background: #C03028; }
+.type-poison { background: #A040A0; }
+.type-ground { background: #E0C068; }
+.type-flying { background: #A890F0; }
+.type-psychic { background: #F85888; }
+.type-bug { background: #A8B820; }
+.type-rock { background: #B8A038; }
+.type-ghost { background: #705898; }
+.type-dragon { background: #7038F8; }
+.type-dark { background: #705848; }
+.type-steel { background: #B8B8D0; }
+.type-fairy { background: #EE99AC; }
+
+.pokemon-stats {
+    margin: 15px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 120px;
+}
+
+.stat-row {
+    display: flex;
+    margin: 5px 0;
     font-size: 14px;
-    color: #aaa;
+}
+
+.pokemon-abilities {
+    margin: 15px 0;
+    background: rgba(255, 204, 0, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 120px;
+    right: 10px;
+    width: 180px;
+}
+
+.pokemon-abilities h3 {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    color: #624f03;
+}
+
+.ability-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin: 5px 0;
+    font-size: 10px;
+    text-transform: capitalize;
+}
+
+.pokemon-base-stats {
+    margin: 15px 0;
+    background: rgba(0, 255, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.pokemon-base-stats h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #90EE90;
+}
+
+.stat-bar {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+    font-size: 8px;
+}
+
+.stat-name {
+    width: 80px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.stat-value {
+    width: 40px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.stat-bar-bg {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4444, #ffaa44, #44ff44);
+    transition: width 0.5s ease;
 }
 
 .controls {
     position: absolute;
-    bottom: 40%;
+    bottom: 18%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 20px;
     z-index: 10;
     opacity: 0;
-    animation: fadeIn ease-in-out 1s 1s forwards;
+    animation: fadeIn 3s forwards;
 }
 
 button {
@@ -65,9 +206,9 @@ button {
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     color: white;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
     cursor: pointer;
     transition: all 0.3s;
 }
