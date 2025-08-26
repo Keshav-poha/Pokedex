@@ -10,47 +10,49 @@
         <button id="search-btn">🔍</button>
     </div>
     
-    <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted>
-        <source src="pokedex.mp4" type="video/mp4">
-    </video>
-    
-    <div class="pokemon-display">
-        <img id="pokemon-sprite" src="" alt="Pokemon">
-        <div class="pokemon-info">
-            <h2 id="pokemon-name">Loading...</h2>
-            <p id="pokemon-id">#001</p>
-            <div id="pokemon-types"></div>
+    <div class="video-container">
+        <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted>
+            <source src="pokedex.mp4" type="video/mp4">
+        </video>
+        
+        <div class="pokemon-display">
+            <img id="pokemon-sprite" src="" alt="Pokemon">
+            <div class="pokemon-info">
+                <h2 id="pokemon-name">Loading...</h2>
+                <p id="pokemon-id">#001</p>
+                <div id="pokemon-types"></div>
+            </div>
+            
+            <div class="pokemon-stats">
+                <div class="stat-row">
+                    <span>Height:</span>
+                    <span id="pokemon-height">-</span>
+                </div>
+                <div class="stat-row">
+                    <span>Weight:</span>
+                    <span id="pokemon-weight">-</span>
+                </div>
+                <div class="stat-row">
+                    <span>Base EXP:</span>
+                    <span id="pokemon-exp">-</span>
+                </div>
+            </div>
+            
+            <div class="pokemon-abilities">
+                <h3>Abilities</h3>
+                <div id="abilities-list"></div>
+            </div>
+            
+            <div class="pokemon-base-stats">
+                <h3>Base Stats</h3>
+                <div id="base-stats"></div>
+            </div>
         </div>
         
-        <div class="pokemon-stats">
-            <div class="stat-row">
-                <span>Height:</span>
-                <span id="pokemon-height">-</span>
-            </div>
-            <div class="stat-row">
-                <span>Weight:</span>
-                <span id="pokemon-weight">-</span>
-            </div>
-            <div class="stat-row">
-                <span>Base EXP:</span>
-                <span id="pokemon-exp">-</span>
-            </div>
+        <div class="controls">
+            <button id="prev-btn">◀</button>
+            <button id="next-btn">▶</button>
         </div>
-        
-        <div class="pokemon-abilities">
-            <h3>Abilities</h3>
-            <div id="abilities-list"></div>
-        </div>
-        
-        <div class="pokemon-base-stats">
-            <h3>Base Stats</h3>
-            <div id="base-stats"></div>
-        </div>
-    </div>
-    
-    <div class="controls">
-        <button id="prev-btn">◀</button>
-        <button id="next-btn">▶</button>
     </div>
     
     <script src="script.js"></script>
