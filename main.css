@@ -16,6 +16,39 @@ body {
     position: relative;
 }
 
+.search-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 20;
+    display: flex;
+    gap: 10px;
+}
+
+#search-input {
+    padding: 10px;
+    background: rgba(0, 20, 50, 0.9);
+    color: white;
+    font-size: 14px;
+    width: 200px;
+}
+
+#search-input::placeholder {
+    color: #ccc;
+}
+
+#search-btn {
+    padding: 10px 15px;
+    color: black;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+#search-btn:hover {
+    background: #3770c5;
+    transform: scale(1.05);
+}
+
 .pokemon-display {
     position: absolute;
     top: 50%;

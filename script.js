@@ -132,4 +132,33 @@ document.getElementById('next-btn').addEventListener('click', function() {
     }
 });
 
+function searchPokemon() {
+    let value = document.getElementById('search-input').value.trim().toLowerCase();
+    if (!value) return;
+
+    let id = isNaN(value) ? value : parseInt(value);
+    if (typeof id === 'number' && (id < 1 || id > 1010)) {
+        alert('Enter a Pokemon ID between 1 and 1010');
+        return;
+    }
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        .then(r => r.ok ? r.json() : Promise.reject())
+        .then(pokemon => {
+            currentPokemonId = pokemon.id;
+            showBasicInfo(pokemon);
+            showTypes(pokemon);
+            showStats(pokemon);
+            showAbilities(pokemon);
+            showBaseStats(pokemon);
+            document.getElementById('search-input').value = '';
+        })
+        .catch(() => alert('Pokemon not found!'));
+}
+
+document.getElementById('search-btn').onclick = searchPokemon;
+document.getElementById('search-input').onkeypress = function(e) {
+    if (e.key === 'Enter') searchPokemon();
+};
+
 loadPokemon(currentPokemonId);
